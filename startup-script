@@ -1,0 +1,9 @@
+#Startup script
+apt update
+apt install -y apache2
+echo "Hello from Auto Scaled VM" > /var/www/html/index.html
+
+#Auto-Scaling Test
+sudo apt update
+sudo apt install stress -y
+stress --cpu 2 --timeout 300
